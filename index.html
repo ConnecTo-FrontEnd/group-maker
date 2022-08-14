@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./tabMenu.js" defer></script>
+    <title>조 짜드림</title>
+  </head>
+  <body>
+    <header>
+      <h1>조 짜드림</h1>
+      <p>지난번에 같은 조였던 사람과 최대한 겹치지 않도록 조를 짜드립니다.</p>
+    </header>
+
+    <main>
+      <section class="section__input" style="background-color: lightgray">
+        <div class="tabs">
+          <div role="tablist" aria-labelledby="tablist-1" class="automatic">
+            <button
+              id="tab-1"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="tabpanel-1"
+            >
+              <span class="focus">최적화 조 짜기</span>
+            </button>
+            <button
+              id="tab-2"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="tabpanel-2"
+              tabindex="-1"
+            >
+              <span class="focus">수동 조 짜기</span>
+            </button>
+          </div>
+
+          <div id="tabpanel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
+            <form action="">
+              <div class="input__pplCnt">
+                <label for="pplCnt">총 인원수</label>
+                <input id="pplCnt" type="number" />
+              </div>
+              <div class="input__groupCnt">
+                <label for="groupCnt">조 개수</label>
+                <input id="groupCnt" type="number" />
+              </div>
+              <div class="input__nameList">
+                <label for="nameList">전체 인원 목록(한 줄에 한 명씩 입력)</label>
+                <textarea name="nameList" id="nameList" cols="30" rows="10"></textarea>
+              </div>
+              <div class="input__submit">
+                <button type="submit">조 짜기!</button>
+              </div>
+            </form>
+          </div>
+          <div
+            id="tabpanel-2"
+            role="tabpanel"
+            tabindex="0"
+            aria-labelledby="tab-2"
+            class="is-hidden"
+          >
+            <form action="">
+              <div class="input__nameList">
+                <label for="nameList"
+                  >전체 인원 목록(한 줄에 한 조씩 띄어쓰기로 이름을 구분하여 입력)</label
+                >
+                <textarea name="nameList" id="nameList" cols="30" rows="10"></textarea>
+              </div>
+              <div class="input__submit">
+                <button type="submit">조 짜기!</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
