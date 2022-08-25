@@ -5,6 +5,9 @@
 
 see [Group maker](https://connecto-frontend.github.io/group-maker/)
 
+
+---
+
 ## Documentation
 
 ### Usage
@@ -21,10 +24,29 @@ see [Group maker](https://connecto-frontend.github.io/group-maker/)
   - 이전 기록을 확인할 수 있습니다
   - 직접 기록을 추가할 수 있습니다
 
+---
+
+### Conventional Commits
+
+ref: https://www.conventionalcommits.org/ko/v1.0.0/
+
+- feat: 기능 개발 관련
+- fix: 오류 개선 혹은 버그 패치
+- docs: 문서화 작업
+- test: test 관련
+- conf: 환경설정 관련
+- build: 빌드 관련
+- ci: Continuous Integration 관련
+
+---
+
+
 ### Reference
 
 Please see
 [Good-Enough-Golfers](https://github.com/islemaster/good-enough-golfers)
+
+---
 
 ### License
 
