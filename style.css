@@ -13,6 +13,16 @@ ul {
   padding: 0;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
 main {
   display: flex;
   gap: 20px;
@@ -31,10 +41,20 @@ main {
   flex-direction: column;
   gap: 10px;
 }
+.sidebar__tabBtnList button {
+  padding: 10px;
+  width: 80%;
+  background-color: skyblue;
+}
 
 .sidebar__infoBtnList {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+}
+
+.sidebar__infoBtnList a {
+  padding: 5px;
+  background-color: aquamarine;
 }
 
 .contentsWrapper {
