@@ -30,10 +30,10 @@ export default class App {
       <li><button>Previous Records</button></li>
     </ul>
     <ul class="sidebar__infoBtnList">
-      <li><button>GITHUB</button></li>
-      <li><button>ISSUE</button></li>
-      <li><button>뭐시기</button></li>
-      <li><button>저시기</button></li>
+      <li><a href="https://github.com/ConnecTo-FrontEnd/group-maker" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
+      <li><a href="https://github.com/ConnecTo-FrontEnd/group-maker/issues/new" target="_blank" rel="noopener noreferrer">ISSUE</a></li>
+      <li><a href="https://github.com/pereng11" target="_blank" rel="noopener noreferrer">JY</a></li>
+      <li><a href="https://github.com/chaerin-dev" target="_blank" rel="noopener noreferrer">CR</a></li>
     </ul>
     `;
     })();
