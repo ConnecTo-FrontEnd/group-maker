@@ -3,164 +3,95 @@
 }
 
 body {
-  margin: 0;
+  margin: 20px;
   text-align: center;
-  background-color: rgb(244, 244, 244);
+  background-color: rgb(112, 87, 137);
 }
 
-header {
-  min-width: 700px;
-  padding: 20px 0;
-  background-color: white;
-  box-shadow: 0 5px 5px #ddd;
-}
-
-main {
-  margin: 45px;
-  display: grid;
-  gap: 45px;
-  grid-template-columns: 1fr 1fr;
-}
-
-table,
-td {
-  border: 1px solid #555;
-  margin: 10px auto;
-}
-
-thead,
-tfoot {
-  background-color: #555;
-  color: #fff;
-}
-
-ol {
+ul {
   list-style: none;
   padding: 0;
 }
 
-.makeGroup {
-  grid-row: 1 /2;
-  grid-column: 1 /2;
+button {
+  border: none;
+  cursor: pointer;
 }
 
-.result {
-  grid-row: 1 /2;
-  grid-column: 2 /3;
+a {
+  color: currentColor;
+  text-decoration: none;
 }
 
-.list {
-  grid-row: 2 /3;
-  grid-column: 1 /3;
-}
-
-[role="tablist"] {
-  width: 100%;
-}
-
-[role="tab"],
-[role="tab"]:focus,
-[role="tab"]:hover {
-  width: 48%;
-  position: relative;
-  z-index: 2;
-  top: 2px;
-  padding: 3px 3px;
-  border: 2px solid #ddd;
-  border-radius: 5px 5px 0 0;
-  overflow: visible;
-  background: #ddd;
-  outline: none;
-  font-weight: bold;
-}
-
-[role="tab"][aria-selected="true"] {
-  border: 2px solid #ddd;
-  border-top-width: 4px;
-  border-bottom-color: white;
-  background: white;
-}
-
-[role="tab"][aria-selected="false"] {
-  border-bottom: 2px solid #ddd;
-}
-
-[role="tab"] span.focus {
-  display: inline-block;
-  margin: 2px;
-  padding: 4px 6px;
-}
-
-[role="tab"]:focus span.focus {
-  padding: 2px 4px;
-  border: 2px solid rgb(36 116 214);
-  border-radius: 3px;
-}
-
-[role="tabpanel"] {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  background: white;
-  height: 350px;
-  min-width: 300px;
-  overflow: auto;
-}
-
-[role="tabpanel"] form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
-}
-
-[role="tabpanel"].is-hidden {
+.displayNone {
   display: none;
 }
 
-.list__card {
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 5px 5px 5px #ddd;
+main {
+  display: flex;
+  gap: 20px;
 }
 
-.result .result__content {
-  min-width: 300px;
-  height: 390px;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  background-color: white;
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: pink;
+}
+
+.sidebar__tabBtnList {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  justify-content: center;
-  align-items: center;
+}
+.sidebar__tabBtnList button {
+  padding: 10px;
+  width: 80%;
+  background-color: skyblue;
 }
 
-.list__content {
-  padding-bottom: 10px;
+.sidebar__infoBtnList {
   display: flex;
-  gap: 10px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  counter-reset: cardCounter;
+  justify-content: space-between;
 }
 
-.list__card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 300px;
-  height: 180px;
+.sidebar__infoBtnList a {
+  padding: 5px;
+  background-color: aquamarine;
 }
 
-.list__card::before {
-  counter-increment: cardCounter;
-  content: counter(cardCounter) "회차";
-  font-weight: bold;
+.contentsWrapper {
+  position: relative;
+  flex-grow: 1;
+  background-color: salmon;
+}
+
+.modalWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background-color: lightgreen;
+  backdrop-filter: blur(4px);
+}
+
+.modalExit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
 }

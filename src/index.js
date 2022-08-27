@@ -1,3 +1,3 @@
-import GroupMaker from './groupMaker/GroupMaker.js';
+import App from './App.js';
 
-const groupMaker = new GroupMaker(document.querySelector('body'));
+new App({ $target: document.querySelector('.App') });
