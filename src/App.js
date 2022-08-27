@@ -1,14 +1,19 @@
 import NewGroup from './components/NewGroup/NewGroup.js';
 import Members from './components/Members/Members.js';
 import Records from './components/Records/Records.js';
+import Storage from './utils/Storage.js';
 
 export default class App {
   constructor({ $target }) {
     // 시작하자마자 로컬스토리지에서 데이터를 가지고 와!
-    this.getLocalStorage = (() => {
-      this.dataStr = window.localStorage.getItem('groupMaker');
-      this.dataObj = JSON.parse(this.dataStr);
-    })();
+    this.storage = new Storage({
+      storageId: 'groupMaker',
+      defaultValue: {
+        members: [],
+        records: [],
+      },
+    });
+    this.state = this.storage.getItem();
 
     // 왼쪽에 올 사이드바 공간을 만들어줘
     this.$sidebar = document.createElement('div');
@@ -40,8 +45,14 @@ export default class App {
 
     // Make New Group, Members, Records 컴포넌트 불러와! 이 때 필요한 데이터 넘겨 줘!
     this.components = (() => {
-      this.newGroupComponent = new NewGroup(this.$contentsWrapper);
-      this.membersComponent = new Members(this.$contentsWrapper, this.dataObj.members);
+      this.newGroupComponent = new NewGroup({
+        $target: this.$contentsWrapper,
+        initialState: this.state,
+        addRecord: newRecord => {
+          this.addRecord(newRecord);
+        },
+      });
+      this.membersComponent = new Members(this.$contentsWrapper, this.state.members);
       this.recordsComponent = new Records(this.$contentsWrapper);
     })();
 
@@ -49,10 +60,23 @@ export default class App {
     this.$tabBtnList = document.querySelector('.sidebar__tabBtnList');
     this.$tabBtnList.addEventListener('click', e => {
       if (e.target.tagName === 'BUTTON') {
-        if (e.target.innerHTML === 'Make New Group') this.newGroupComponent.init();
+        if (e.target.innerHTML === 'Make New Group') this.newGroupComponent.render();
         if (e.target.innerHTML === 'Manage Members') this.membersComponent.init();
         if (e.target.innerHTML === 'Previous Records') this.recordsComponent.init();
       }
     });
+  }
+  setState(nextState) {
+    this.state = nextState;
+    this.storage.setItem(this.state);
+  }
+
+  addRecord(newRecord) {
+    const nextState = {
+      ...this.state,
+      records: [...this.state.records, newRecord],
+    };
+    this.setState(nextState);
+    this.newGroup.setState(this.state);
   }
 }

@@ -14,7 +14,7 @@ class NewGroup {
 
     this.$container.appendChild(this.$title);
     this.$container.appendChild(this.$contentBox);
-
+    console.log(this.state);
     this.newGroupForm = new NewGroupForm({
       $target: this.$contentBox,
       maxGroupNum: this.state.members.length,
@@ -68,8 +68,6 @@ class NewGroup {
       forbiddenPairs: [],
     };
     const { newRecord, roundScore, weights } = solver(data);
-    console.log(this.state);
-
     this.renderResult({
       members: this.state.members,
       record: newRecord,
