@@ -23,6 +23,10 @@ a {
   text-decoration: none;
 }
 
+.displayNone {
+  display: none;
+}
+
 main {
   display: flex;
   gap: 20px;
