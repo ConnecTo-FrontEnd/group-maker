@@ -14,7 +14,6 @@ class NewGroup {
 
     this.$container.appendChild(this.$title);
     this.$container.appendChild(this.$contentBox);
-    console.log(this.state);
     this.newGroupForm = new NewGroupForm({
       $target: this.$contentBox,
       maxGroupNum: this.state.members.length,

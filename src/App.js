@@ -3,6 +3,44 @@ import Members from './components/Members/Members.js';
 import Records from './components/Records/Records.js';
 import Storage from './utils/Storage.js';
 
+const sampleState = {
+  members: [
+    { id: 0, name: '강지승', isActive: true },
+    { id: 1, name: '김경현', isActive: true },
+    { id: 2, name: '김민석', isActive: true },
+    { id: 3, name: '김은우', isActive: true },
+    { id: 4, name: '김이주', isActive: true },
+    { id: 5, name: '김채린', isActive: true },
+    { id: 6, name: '김현진', isActive: true },
+    { id: 7, name: '박윤하', isActive: true },
+    { id: 8, name: '박지윤', isActive: true },
+    { id: 9, name: '백남헌', isActive: true },
+    { id: 10, name: '손재영', isActive: true },
+    { id: 11, name: '신민경', isActive: true },
+    { id: 12, name: '유은지', isActive: true },
+    { id: 13, name: '이채련', isActive: true },
+    { id: 14, name: '전희준', isActive: true },
+    { id: 15, name: '조한', isActive: true },
+    { id: 16, name: '최현정', isActive: true },
+  ],
+  records: [
+    [
+      [1, 2, 4, null],
+      [3, 8, 5, null],
+      [0, 11, 13, null],
+      [6, 9, 12, 14],
+      [7, 10, 15, 16],
+    ],
+    [
+      [9, 12, 7, null],
+      [16, 4, 1, null],
+      [0, 14, 11, 6],
+      [3, 2, 10, 15],
+      [13, 8, 5, null],
+    ],
+  ],
+};
+
 export default class App {
   constructor({ $target }) {
     // 시작하자마자 로컬스토리지에서 데이터를 가지고 와!
@@ -13,6 +51,7 @@ export default class App {
         records: [],
       },
     });
+    this.state = this.storage.setItem(sampleState);
     this.state = this.storage.getItem();
 
     // 왼쪽에 올 사이드바 공간을 만들어줘
