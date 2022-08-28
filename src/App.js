@@ -67,6 +67,7 @@ const sampleState = {
       [8, 11, 9],
     ],
   ],
+  lastId: 18,
 };
 
 export default class App {
@@ -119,7 +120,7 @@ export default class App {
           this.addRecord(newRecord);
         },
       });
-      this.membersComponent = new Members(this.$contentsWrapper, this.state.members);
+      this.membersComponent = new Members(this.$contentsWrapper, this.state.members, this.state.lastId);
       this.recordsComponent = new Records(this.$contentsWrapper);
     })();
 

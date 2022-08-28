@@ -8,7 +8,8 @@ body {
   background-color: rgb(112, 87, 137);
 }
 
-ul {
+ul,
+ol {
   list-style: none;
   padding: 0;
 }
@@ -27,7 +28,7 @@ a {
   display: none;
 }
 
-main {
+.App {
   display: flex;
   gap: 20px;
 }
@@ -88,10 +89,14 @@ main {
   backdrop-filter: blur(4px);
 }
 
-.modalExit {
+.modalClose {
   position: absolute;
   top: 10px;
   right: 10px;
   width: 20px;
   height: 20px;
+}
+
+.errorMsg {
+  color: red;
 }
