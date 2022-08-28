@@ -19,6 +19,10 @@ body {
   background-color: rgb(112, 87, 137);
 }
 
+fieldset {
+  border: none;
+}
+
 h1,
 h2,
 h3 {
@@ -57,7 +61,8 @@ input {
   gap: 20px;
 }
 
-.a11yHidden {
+.a11yHidden,
+legend {
   overflow: hidden;
   position: absolute !important;
   clip: rect(0, 0, 0, 0);
@@ -125,16 +130,47 @@ input {
 /* NewGroup */
 
 /* NewGroupForm */
-
+.makeGroup {
+  padding: 2rem;
+  background-color: #291474;
+  color: #e0d9f6;
+}
 .makeGroup__form {
   height: 100%;
 }
-.makeGroup__form legend {
-  font-size: 1.5rem;
+.makeGroup__title {
+  font-size: 2rem;
+}
+.makeGroup__numberBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
 }
 .makeGroup__number {
-  display: block;
   font-size: 5rem;
+}
+
+.makeGroup__btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 5px;
+  font-size: 4rem;
+  transition: all 200ms;
+}
+.makeGroup__btn:hover {
+  cursor: pointer;
+  color: #fef6fe;
+  background-color: #41127c;
+}
+.makeGroup__btn--decrease {
+  order: -1;
+}
+.makeGroup__btn--submit {
+  width: 10rem;
+  font-size: 1.5rem;
 }
 
 /* NewGroupResult */

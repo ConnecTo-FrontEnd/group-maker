@@ -12,6 +12,7 @@ export default class NewGroupForm {
       <form class="makeGroup__form" action="">
         <fieldset>
           <legend>조 짜기 입력창</legend>
+          <p class="makeGroup__title">조 짜기 입력창</p>
           <div class="makeGroup__numberBox">
             <span class="makeGroup__number">${this.state}</span>
             <button class="makeGroup__btn makeGroup__btn--decrease" data-name="decrease" type="button">-</button>

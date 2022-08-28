@@ -10,7 +10,7 @@ class NewGroupResult {
     this.$list.classList.add('result__list', 'result__list--group');
 
     this.$controlsBox = document.createElement('div');
-    this.$list.classList.add('result__controls');
+    this.$controlsBox.classList.add('result__controls');
     this.$controlsBox.innerHTML = `
       <button class="result__btn result__btn--retry" data-role="retry" type="button">Retry</button>
       <button class="result__btn result__btn--submit" data-role="save" type="button">Save</button>
@@ -39,7 +39,7 @@ class NewGroupResult {
   drawGroup(group, groupIdx) {
     return `          
         <li class="result__item result__item--group">
-          <h3 class="result__item__title">${groupIdx + 1}조</h3>
+          <h3 class="result__item__title">${groupIdx + 1}조:</h3>
           <ul class="result__list result__list--member">
             ${group.map(member => this.drawMember(member)).join('')}
           </ul>
