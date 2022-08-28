@@ -28,7 +28,7 @@ export default class member {
 
     // 마지막에 멤버 추가 버튼 추가해줘!
     this.$memberList.innerHTML += `
-    <li>
+    <li class="memberItem">
       <button class="addBtn">Add Member</button>
     </li>
     `;
