@@ -1,5 +1,13 @@
+/* Common */
+
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('./src/fonts/DungGeunMo.woff2') format('woff2');
+}
+
 * {
   box-sizing: border-box;
+  font-family: 'DungGeunMo';
   margin: 0;
   padding: 0;
 }
@@ -23,6 +31,7 @@ ul,
 ol {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 button {
@@ -47,6 +56,19 @@ input {
   display: flex;
   gap: 20px;
 }
+
+.a11yHidden {
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+/* Template */
 
 .sidebar {
   display: flex;
@@ -99,6 +121,86 @@ input {
   height: 100px;
   background-color: lightgreen;
 }
+
+/* NewGroup */
+
+/* NewGroupForm */
+
+.makeGroup__form {
+  height: 100%;
+}
+.makeGroup__form legend {
+  font-size: 1.5rem;
+}
+.makeGroup__number {
+  display: block;
+  font-size: 5rem;
+}
+
+/* NewGroupResult */
+
+.result__list--group {
+  padding: 2rem 0;
+  background-color: #291474;
+}
+
+.result__item--group {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 3rem;
+  color: #04f8fa;
+}
+.result__item__title {
+  margin: 0;
+  font-size: 1.5rem;
+  padding: 0 1.5rem;
+  width: 6rem;
+  white-space: nowrap;
+  color: #e0d9f6;
+}
+.result__list--member {
+  display: flex;
+  gap: 1rem;
+  flex-flow: row wrap;
+}
+.result__item--member {
+  background-color: #1a1d4a;
+  border: 2px solid #e0d9f6;
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: all 150ms;
+}
+.result__item--member:hover {
+  cursor: pointer;
+  color: #fef6fe;
+  background-color: #41127c;
+}
+
+.result__controls {
+  background-color: #291474;
+  padding: 2rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.result__btn {
+  width: 8rem;
+  height: 4rem;
+  border-radius: 5px;
+  font-size: 2rem;
+  transition: all 200ms;
+}
+.result__btn:hover {
+  cursor: pointer;
+  color: #fef6fe;
+  background-color: #41127c;
+}
+
+/* Modal */
 
 .modalWrapper {
   position: absolute;
