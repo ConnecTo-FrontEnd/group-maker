@@ -67,6 +67,7 @@ const sampleState = {
       [8, 11, 9],
     ],
   ],
+  lastId: 18,
 };
 
 export default class App {
@@ -119,8 +120,14 @@ export default class App {
           this.addRecord(newRecord);
         },
       });
-      this.membersComponent = new Members(this.$contentsWrapper, this.state.members);
-      this.recordsComponent = new Records(this.$contentsWrapper);
+      this.membersComponent = new Members(
+        this.storage,
+        this.state,
+        this.$contentsWrapper,
+        this.state,
+        this.state.lastId
+      );
+      this.recordsComponent = new Records(this.state, this.$contentsWrapper);
     })();
 
     // 탭 메뉴 선택 buttons에 이벤트 리스너 -> 클릭할때마다 컨텐츠 공간 안에 들어갈 컴포넌트 바꿔줘!
