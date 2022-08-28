@@ -21,21 +21,20 @@ const updateWeights = (round, weights) => {
   }
 };
 // 초기값(0)으로 가중치 배열 생성한 뒤 누적 라운드 순회하며 가중치 업데이트 후 반환
-const initWeights = (totalSize, records) => {
-  const weights = _.range(totalSize).map(() => _.range(totalSize).fill(0));
+const initWeights = (totalPeopleNum, records) => {
+  const weights = _.range(totalPeopleNum).map(() => _.range(totalPeopleNum).fill(0));
   records.forEach(round => updateWeights(round, weights));
   return weights;
 };
 
-const solver = ({ records, groupNum, peopleArr, forbiddenPairs }) => {
-  const totalPeopleNum = peopleArr.length;
+const solver = ({ records, groupNum, peopleArr, totalPeopleNum, forbiddenPairs }) => {
   // 빈 공간 채우도록 초기화
   while (peopleArr.length % groupNum !== 0) {
     peopleArr.push(null);
   }
+  const activePeopleNum = peopleArr.length;
 
-  const totalSize = peopleArr.length;
-  const peoplePerGroup = totalSize / groupNum;
+  const peoplePerGroup = activePeopleNum / groupNum;
   // 현재 가중치 기준 라운드 점수 반환
   const getScoredRound = (round, weights) => {
     const groupScores = round.map(group => {
@@ -93,7 +92,7 @@ const solver = ({ records, groupNum, peopleArr, forbiddenPairs }) => {
       // Add every mutation that swaps somebody out of the most expensive group
       // (The first group is the most expensive now that we've sorted them)
       for (let i = 0; i < peoplePerGroup; i++) {
-        for (let j = peoplePerGroup; j < totalSize; j++) {
+        for (let j = peoplePerGroup; j < activePeopleNum; j++) {
           mutations.push(getScoredRound(getSwappedRound(sorted, i, j), weights));
         }
       }
