@@ -64,9 +64,11 @@ class NewGroup {
       groupNum,
       records: [...this.state.records],
       peopleArr: this.state.members.filter(({ isActive }) => isActive).map(({ id }) => id),
+      totalPeopleNum: this.state.members.length,
       forbiddenPairs: [],
     };
     const { newRecord, roundScore, weights } = solver(data);
+    console.log(roundScore, weights);
     this.renderResult({
       members: this.state.members,
       record: newRecord,
