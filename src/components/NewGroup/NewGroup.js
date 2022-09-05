@@ -9,10 +9,8 @@ class NewGroup {
     this.addRecord = addRecord;
 
     this.$container = document.createElement('section');
-    this.$title = document.createElement('h2');
     this.$contentBox = document.createElement('div');
 
-    this.$container.appendChild(this.$title);
     this.$container.appendChild(this.$contentBox);
     this.newGroupForm = new NewGroupForm({
       $target: this.$contentBox,

@@ -14,9 +14,9 @@
 
 html {
   width: 100vw;
-  /* min-width: 1000px; */
+  min-width: 1000px;
   height: 100vh;
-  /* min-height: 800px; */
+  min-height: 800px;
   padding: 20px;
   background: rgb(35, 5, 35) no-repeat url('./src/img/purpleCity.jpg');
   background-size: cover cover;
@@ -27,10 +27,6 @@ body {
   height: 100%;
   min-height: 700px;
   text-align: center;
-}
-
-fieldset {
-  border: none;
 }
 
 h1,
@@ -93,8 +89,12 @@ legend {
 
 h2 {
   font-size: 50px;
-  height: 50px;
+  height: 70px;
+  line-height: 70px;
   color: white;
+  background-color: rgba(256, 256, 256, 0.3);
+  text-shadow: 2px 2px 3px rgba(54, 54, 54, 0.7);
+  border-radius: 10px;
 }
 
 .sidebar {
@@ -102,10 +102,11 @@ h2 {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  padding: 20px;
-  background: rgb(256, 256, 256, 0.3);
-  backdrop-filter: blur(5px);
+  padding: 10px;
+  /* background: rgb(256, 256, 256, 0.3); */
+  /* backdrop-filter: blur(5px); */
   border-radius: 20px;
+  /* border: 2px solid white; */
 }
 
 .sidebar__tabBtnList {
@@ -115,8 +116,8 @@ h2 {
 }
 .sidebar__tabBtnList button {
   padding: 20px 10px;
-  width: 90%;
-  background-color: rgba(88, 23, 218, 0.3);
+  width: 100%;
+  background-color: rgba(88, 23, 218, 0.4);
   border: 1px solid white;
   font-size: 28px;
   color: white;
@@ -124,7 +125,7 @@ h2 {
 }
 
 .sidebar__tabBtnList button:hover {
-  background-color: rgba(88, 23, 218, 0.5);
+  background-color: rgba(88, 23, 218, 0.7);
   box-shadow: 2px 2px 5px #fcdeff, -2px 2px 5px #fcdeff, 2px -2px 5px #fcdeff, -2px -2px 5px #fcdeff;
 }
 
@@ -140,12 +141,12 @@ h2 {
   align-items: center;
   width: 50px;
   height: 50px;
-  background-color: rgba(256, 256, 256, 0.2);
+  background-color: rgba(256, 256, 256, 0.3);
   border-radius: 50%;
 }
 
 .sidebar__infoBtnList li:hover {
-  background-color: rgba(256, 256, 256, 0.3);
+  background-color: rgba(256, 256, 256, 0.4);
   box-shadow: 1px 1px 5px #fcdeff, -1px 1px 5px #fcdeff, 1px -1px 5px #fcdeff, -1px -1px 5px #fcdeff;
 }
 
@@ -159,9 +160,11 @@ h2 {
   padding: 20px;
   position: relative;
   flex-grow: 1;
-  background: rgba(256, 256, 256, 0.3);
+  /* background: rgba(88, 23, 218, 0.2); */
+  background: rgba(256, 256, 256, 0.2);
   backdrop-filter: blur(5px);
   border-radius: 20px;
+  border: 2px solid white;
 }
 .memberList {
   display: flex;
@@ -190,6 +193,7 @@ h2 {
   color: #e0d9f6;
 }
 .makeGroup__form {
+  padding: auto;
   height: 100%;
 }
 .makeGroup__title {
@@ -212,7 +216,7 @@ h2 {
   height: 4rem;
   border-radius: 5px;
   font-size: 4rem;
-  transition: all 200ms;
+  /* transition: all 200ms; */
 }
 .makeGroup__btn:hover {
   cursor: pointer;
