@@ -157,13 +157,29 @@ h2 {
   /* background-color: pink; */
   background: rgb(256, 256, 256, 0.3);
   backdrop-filter: blur(3px);
-  border-radius: 20px;
+  border-radius: 5px;
+  overflow-y: scroll;
 }
+
+.contentsWrapper::-webkit-scrollbar,
+.contentsWrapper::-webkit-scrollbar-thumb {
+  color: #41127c;
+  width: 15px;
+  background-color: rgba(83, 43, 184, 0.5);
+  border-radius: 20px;
+  -webkit-transition: all 500ms;
+}
+.contentsWrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 .memberList {
   display: flex;
   flex-flow: wrap;
-  gap: 20px;
-  /* padding: 0 20px; */
+  gap: 5%;
+  padding: 0 10px 0 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .memberItem {
@@ -171,10 +187,18 @@ h2 {
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  padding: 10px;
-  width: 20%;
-  height: 100px;
-  background-color: lightgreen;
+  margin-top: 20px;
+  padding: 20px;
+  width: 30%;
+  height: 200px;
+  background-color: rgba(83, 43, 184, 0.3);
+  border: 1px solid white;
+  font-size: 25px;
+  transition: all 200ms;
+}
+
+.memberItem:hover {
+  background-color: rgba(83, 43, 184, 0.5);
 }
 
 /* NewGroup */
