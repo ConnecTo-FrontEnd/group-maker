@@ -8,20 +8,18 @@ export default class NewGroupForm {
 
   render() {
     this.$target.innerHTML = `
-    <section class="makeGroup">
-      <form class="makeGroup__form" action="">
-        <fieldset>
-          <legend>조 짜기 입력창</legend>
-          <p class="makeGroup__title">조 짜기 입력창</p>
-          <div class="makeGroup__numberBox">
-            <span class="makeGroup__number">${this.state}</span>
-            <button class="makeGroup__btn makeGroup__btn--decrease" data-name="decrease" type="button">-</button>
-            <button class="makeGroup__btn makeGroup__btn--increase" data-name="increase" type="button">+</button>
-          </div>
-          <button class="makeGroup__btn makeGroup__btn--submit" type="submit">조 짜기!</button>
-        </fieldset>
-      </form>
-    </section>
+    <h2>MAKE NEW GROUP</h2>
+    <form class="makeGroup__form" action="">
+      <fieldset>
+        <legend>조 짜기 입력창</legend>
+        <div class="makeGroup__numberBox">
+          <span class="makeGroup__number">${this.state}</span>
+          <button class="makeGroup__btn makeGroup__btn--decrease" data-name="decrease" type="button">-</button>
+          <button class="makeGroup__btn makeGroup__btn--increase" data-name="increase" type="button">+</button>
+        </div>
+        <button class="makeGroup__btn makeGroup__btn--submit" type="submit">조 짜기!</button>
+      </fieldset>
+    </form>
     `;
     this.$form = this.$target.querySelector('.makeGroup__form');
     this.$numberBox = this.$target.querySelector('.makeGroup__numberBox');
