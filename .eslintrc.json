@@ -41,7 +41,8 @@
         "allowTaggedTemplates": true
       }
     ],
-    "import/no-extraneous-dependencies": ["always", { "devDependencies": true }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/extensions": ["always"],
     "max-len": [
       "error",
       {
