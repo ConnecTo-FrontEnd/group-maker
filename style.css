@@ -13,10 +13,13 @@
 }
 
 html {
+  width: 100vw;
+  min-width: 1000px;
   height: 100vh;
+  min-height: 800px;
   padding: 20px;
-  background: no-repeat url('./src/img/purpleCity.jpg');
-  background-size: auto auto;
+  background: rgb(35, 5, 35) no-repeat url('./src/img/purpleCity.jpg');
+  background-size: cover cover;
   background-position: center;
 }
 
@@ -24,10 +27,6 @@ body {
   height: 100%;
   min-height: 700px;
   text-align: center;
-}
-
-fieldset {
-  border: none;
 }
 
 h1,
@@ -85,27 +84,29 @@ legend {
 .logo {
   font-size: 90px;
   color: white;
-  /* text-shadow: 3px 3px 5px violet, -3px -3px 5px violet, 3px -3px 5px violet, -3px 3px 5px violet; */
-  text-shadow: 3px 3px 5px darkmagenta;
+  text-shadow: 3px 3px 5px rgba(88, 23, 218, 0.7);
 }
 
 h2 {
   font-size: 50px;
-  /* background-color: white; */
-  height: 50px;
+  height: 70px;
+  line-height: 70px;
   color: white;
+  background-color: rgba(256, 256, 256, 0.3);
+  text-shadow: 2px 2px 3px rgba(54, 54, 54, 0.7);
+  border-radius: 10px;
 }
 
 .sidebar {
   width: 350px;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  padding: 20px;
-  /* background-color: rgba(0, 0, 0, 0.3); */
-  background: rgb(256, 256, 256, 0.3);
-  backdrop-filter: blur(5px);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 10px;
+  /* background: rgb(256, 256, 256, 0.3); */
+  /* backdrop-filter: blur(5px); */
   border-radius: 20px;
+  /* border: 2px solid white; */
 }
 
 .sidebar__tabBtnList {
@@ -114,24 +115,24 @@ h2 {
   gap: 30px;
 }
 .sidebar__tabBtnList button {
-  padding: 20px;
-  width: 90%;
-  background-color: rgba(83, 43, 184, 0.3);
+  padding: 20px 10px;
+  width: 100%;
+  background-color: rgba(88, 23, 218, 0.4);
   border: 1px solid white;
-  font-size: 25px;
+  font-size: 28px;
+  color: white;
+  text-shadow: 2px 2px 5px #1a1d4a;
 }
 
 .sidebar__tabBtnList button:hover {
-  padding: 20px;
-  width: 90%;
-  background-color: rgba(83, 43, 184, 0.5);
-  border: 1px solid white;
-  font-size: 25px;
+  background-color: rgba(88, 23, 218, 0.7);
+  box-shadow: 2px 2px 5px #fcdeff, -2px 2px 5px #fcdeff, 2px -2px 5px #fcdeff, -2px -2px 5px #fcdeff;
 }
 
 .sidebar__infoBtnList {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .sidebar__infoBtnList li {
@@ -140,8 +141,13 @@ h2 {
   align-items: center;
   width: 50px;
   height: 50px;
-  background-color: black;
+  background-color: rgba(256, 256, 256, 0.3);
   border-radius: 50%;
+}
+
+.sidebar__infoBtnList li:hover {
+  background-color: rgba(256, 256, 256, 0.4);
+  box-shadow: 1px 1px 5px #fcdeff, -1px 1px 5px #fcdeff, 1px -1px 5px #fcdeff, -1px -1px 5px #fcdeff;
 }
 
 .sidebar__infoBtnList a {
@@ -154,25 +160,12 @@ h2 {
   padding: 20px;
   position: relative;
   flex-grow: 1;
-  /* background-color: pink; */
-  background: rgb(256, 256, 256, 0.3);
-  backdrop-filter: blur(3px);
-  border-radius: 5px;
-  overflow-y: scroll;
-}
-
-.contentsWrapper::-webkit-scrollbar,
-.contentsWrapper::-webkit-scrollbar-thumb {
-  color: #41127c;
-  width: 15px;
-  background-color: rgba(83, 43, 184, 0.5);
+  /* background: rgba(88, 23, 218, 0.2); */
+  background: rgba(256, 256, 256, 0.2);
+  backdrop-filter: blur(5px);
   border-radius: 20px;
-  -webkit-transition: all 500ms;
+  border: 2px solid white;
 }
-.contentsWrapper::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
 .memberList {
   display: flex;
   flex-flow: wrap;
@@ -206,10 +199,11 @@ h2 {
 /* NewGroupForm */
 .makeGroup {
   padding: 2rem;
-  background-color: #291474;
+  /* background-color: #291474; */
   color: #e0d9f6;
 }
 .makeGroup__form {
+  padding: auto;
   height: 100%;
 }
 .makeGroup__title {
@@ -232,7 +226,7 @@ h2 {
   height: 4rem;
   border-radius: 5px;
   font-size: 4rem;
-  transition: all 200ms;
+  /* transition: all 200ms; */
 }
 .makeGroup__btn:hover {
   cursor: pointer;
@@ -319,7 +313,7 @@ h2 {
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
 }
 
 .modal {
